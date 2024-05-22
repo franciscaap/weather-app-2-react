@@ -1,3 +1,8 @@
-.App {
-  text-align: center;
+.App .app-container {
+  max-width: 650px;
+  background: white;
+  display: block;
+  margin: 70px auto;
+  padding: 30px;
+  border-radius: 20px;
 }

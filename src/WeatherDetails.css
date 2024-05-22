@@ -1,0 +1,48 @@
+.WeatherDetails .current-city {
+  font-size: 52px;
+  margin: 60px 0 0 20px;
+}
+.WeatherDetails .country {
+  margin: 0 0 40px 22px;
+  font-size: 18px;
+}
+
+.WeatherDetails .current-details {
+  color: #958d8d;
+  margin-left: 22px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.WeatherDetails #temperature-details strong {
+  color: #6242bd;
+}
+
+.WeatherDetails .current-temperature {
+  margin: 60px 20px;
+}
+.WeatherDetails #icon {
+  margin-top: 30px;
+}
+.WeatherDetails .current-temperature-icon {
+  position: relative;
+  font-size: 50px;
+}
+
+.WeatherDetails .current-temperature-value {
+  font-size: 130px;
+}
+
+.WeatherDetails .current-temperature-unit {
+  font-size: 38px;
+  margin-top: 40px;
+}
+
+.WeatherDetails footer {
+  font-size: 14px;
+  color: #958d8d;
+  margin-top: 30px;
+}
+.WeatherDetails a {
+  color: #bca20f;
+}
