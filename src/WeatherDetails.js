@@ -1,42 +1,46 @@
 import React from "react";
 import "./WeatherDetails.css";
 
-export default function WeatherDetails() {
+export default function WeatherDetails(props) {
   return (
     <div className="WeatherDetails">
-      <div class="current-weather d-flex justify-content-between">
+      <div className="current-weather d-flex justify-content-between">
         <div>
-          <h1 className="current-city">London</h1>
-          <h3 className="country">United Kingdom</h3>
-          <p class="current-details">
-            <span class="current-time" id="time">
-              Saturday 21:40
+          <h1 className="current-city">{props.info.city}</h1>
+          <h3 className="country">{props.info.country}</h3>
+          <p className="current-details">
+            <span className="current-time" id="time">
+              Saturday 21:40,
             </span>
-            <span id="description">Cloudy</span>
+            <span id="description"> {props.info.description}</span>
             <br />
             <span id="temperature-details">
-              Humidity <strong id="humidity">62%</strong>, Wind:
-              <strong id="wind">22km/h</strong>
+              Humidity: <strong id="humidity">{props.info.humidity}%</strong>,
+              Wind:
+              <strong id="wind"> {props.info.wind}km/h</strong>
             </span>
           </p>
         </div>
-        <div class="current-temperature d-flex">
+        <div className="current-temperature d-flex">
           <div>
             <div id="icon">
               <img
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                src={props.info.icon}
                 className="current-temperature-icon"
                 alt="Icon"
               />
             </div>
           </div>
           <div
-            class="current-temperature-value fw-bold"
+            className="current-temperature-value fw-bold"
             id="current-temperature-value"
           >
-            4
+            {props.info.temperature}
           </div>
-          <div class="current-temperature-unit" id="current-temperature-unit">
+          <div
+            className="current-temperature-unit"
+            id="current-temperature-unit"
+          >
             °C
           </div>
         </div>
@@ -52,7 +56,7 @@ export default function WeatherDetails() {
         </a>
         , code hosted on{" "}
         <a
-          href="https://github.com/franciscaap/weather-ology"
+          href="https://github.com/franciscaap/weather-app-2-react"
           target="_blank"
           rel="noreferrer"
         >
@@ -60,7 +64,7 @@ export default function WeatherDetails() {
         </a>
         and website hosted on{" "}
         <a
-          href="https://weatherology-app.netlify.app/"
+          href="https://weatherology-app-react.netlify.app/"
           target="_blank"
           rel="noreferrer"
         >
