@@ -26,3 +26,10 @@
   border-radius: 6px;
   height: 55px;
 }
+
+@media (max-width: 776px) {
+  .WeatherSearch .form-search-button {
+    max-width: 150px;
+    margin-top: 20px;
+  }
+}

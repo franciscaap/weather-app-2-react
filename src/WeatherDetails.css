@@ -1,32 +1,31 @@
 .WeatherDetails .current-city {
   font-size: 52px;
-  margin: 60px 0 0 20px;
+  margin: 40px 30px 5px 20px;
 }
 .WeatherDetails .country {
-  margin: 0 0 40px 22px;
+  margin: 0 0 40px 25px;
   font-size: 18px;
 }
 
 .WeatherDetails .current-details {
   color: #958d8d;
-  margin-left: 22px;
+  margin: 20px 0 0 25px;
   font-size: 16px;
   line-height: 24px;
 }
 
-.WeatherDetails #temperature-details strong {
+.WeatherDetails .temperature-details strong {
   color: #6242bd;
 }
 
 .WeatherDetails .current-temperature {
-  margin: 60px 20px;
+  margin: 60px 0 60px;
 }
-.WeatherDetails #icon {
-  margin-top: 30px;
-}
+
 .WeatherDetails .current-temperature-icon {
   position: relative;
   font-size: 50px;
+  margin: 50px 0;
 }
 
 .WeatherDetails .current-temperature-value {
@@ -45,4 +44,22 @@
 }
 .WeatherDetails a {
   color: #bca20f;
+}
+
+@media (max-width: 750px) {
+  .WeatherDetails .current-temperature {
+    display: inline-block;
+  }
+  .WeatherDetails .current-city {
+    margin: 40px 0 10px 0;
+  }
+  .WeatherDetails .country {
+    margin: 0 0 40px 0;
+  }
+  .WeatherDetails .current-details {
+    margin: 20px 0 0 0;
+  }
+  .WeatherDetails footer {
+    font-size: 12px;
+  }
 }
