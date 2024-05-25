@@ -1,5 +1,6 @@
 import React from "react";
 import "./WeatherDetails.css";
+import SearchDate from "./SearchDate";
 
 export default function WeatherDetails(props) {
   return (
@@ -8,15 +9,16 @@ export default function WeatherDetails(props) {
         <div className="col-md-6">
           <h1 className="current-city">{props.info.city}</h1>
           <h3 className="country">{props.info.country}</h3>
-          <p className="current-details">
-            <span className="current-time">Saturday 21:40,</span>
-            <span> {props.info.description}</span>
-            <br />
-            <span className="temperature-details">
+          <div className="current-details ">
+            <span>
+              <SearchDate date={props.info.date} />
+              {props.info.description}
+            </span>
+            <p className="temperature-details">
               Humidity: <strong>{props.info.humidity}%</strong>, Wind:
               <strong> {props.info.wind}km/h</strong>
-            </span>
-          </p>
+            </p>
+          </div>
         </div>
         <div className="col-md-6">
           <div className="current-temperature">

@@ -18,6 +18,7 @@ export default function WeatherSearch(props) {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
+      date: new Date(response.data.time * 1000),
     });
   }
 
