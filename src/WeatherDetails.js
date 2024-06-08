@@ -1,6 +1,7 @@
 import React from "react";
 import "./WeatherDetails.css";
 import SearchDate from "./SearchDate";
+import CurrentTemperature from "./CurrentTemperature";
 
 export default function WeatherDetails(props) {
   return (
@@ -32,10 +33,7 @@ export default function WeatherDetails(props) {
                   />
                 </div>
               </div>
-              <div className="current-temperature-value fw-bold">
-                {props.info.temperature}
-              </div>
-              <div className="current-temperature-unit">°C</div>
+              <CurrentTemperature celsius={props.info.temperature} />
             </div>
           </div>
         </div>
