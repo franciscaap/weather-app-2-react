@@ -27,9 +27,24 @@
   height: 55px;
 }
 
+.WeatherSearch footer {
+  font-size: 14px;
+  color: #958d8d;
+  margin-top: 30px;
+}
+.WeatherSearch a {
+  color: #bca20f;
+}
+
 @media (max-width: 776px) {
   .WeatherSearch .form-search-button {
     max-width: 150px;
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 750px) {
+  .WeatherSearch footer {
+    font-size: 12px;
   }
 }

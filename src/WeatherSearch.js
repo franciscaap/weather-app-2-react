@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherDetails from "./WeatherDetails";
+import WeatherForecast from "./WeatherForecast";
 import "./WeatherSearch.css";
 
 export default function WeatherSearch(props) {
@@ -62,6 +63,33 @@ export default function WeatherSearch(props) {
           </div>
         </form>
         <WeatherDetails info={weatherData} />
+        <WeatherForecast />
+        <footer className="text-center">
+          Coded by{" "}
+          <a
+            href="https://github.com/franciscaap"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Francisca Agyekum Poku
+          </a>
+          , code hosted on{" "}
+          <a
+            href="https://github.com/franciscaap/weather-app-2-react"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub{" "}
+          </a>
+          and website hosted on{" "}
+          <a
+            href="https://weatherology-app-react.netlify.app/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Netlify.
+          </a>
+        </footer>
       </div>
     );
   } else {

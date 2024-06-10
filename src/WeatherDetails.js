@@ -38,32 +38,6 @@ export default function WeatherDetails(props) {
           </div>
         </div>
       </div>
-      <footer className="text-center">
-        Coded by{" "}
-        <a
-          href="https://github.com/franciscaap"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Francisca Agyekum Poku
-        </a>
-        , code hosted on{" "}
-        <a
-          href="https://github.com/franciscaap/weather-app-2-react"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub{" "}
-        </a>
-        and website hosted on{" "}
-        <a
-          href="https://weatherology-app-react.netlify.app/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Netlify.
-        </a>
-      </footer>
     </div>
   );
 }
