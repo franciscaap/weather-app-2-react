@@ -9,7 +9,6 @@ export default function WeatherSearch(props) {
   let [city, setCity] = useState(props.defaultCity);
 
   function displayWeather(response) {
-    console.log(response);
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.temperature.current),
@@ -20,6 +19,7 @@ export default function WeatherSearch(props) {
       wind: response.data.wind.speed,
       icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
       date: new Date(response.data.time * 1000),
+      coordinates: response.data.coordinates,
     });
   }
 
@@ -63,7 +63,7 @@ export default function WeatherSearch(props) {
           </div>
         </form>
         <WeatherDetails info={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
         <footer className="text-center">
           Coded by{" "}
           <a
