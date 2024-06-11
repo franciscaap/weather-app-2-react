@@ -1,32 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "./WeatherForecast.css";
+import WeatherForecastDay from "./WeatherForecastDay";
 import axios from "axios";
 
 export default function WeatherForecast(props) {
-  function WeatherForecastResponse(response) {}
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState("null");
 
-  let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
-  let longitude = props.coordinates.longitude;
-  let latitude = props.coordinates.latitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  function WeatherForecastResponse(response) {
+    setLoaded(true);
+    setForecast(response.data.daily);
+  }
 
-  axios.get(apiUrl).then(WeatherForecastResponse);
+  if (loaded) {
+    return <WeatherForecastDay data={forecast[0]} />;
+  } else {
+    let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
+    let longitude = props.coordinates.longitude;
+    let latitude = props.coordinates.latitude;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-  return (
-    <div className="WeatherForecast ms-4 text-center">
-      <div className="row">
-        <div className="col">
-          <div className="WeatherForecast-day">Tue</div>
-          <div className="WeatherForecast-imoji">
-            <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
-              alt="weather imoji"
-            />
-          </div>
-          <span className="WeatherForecast-min-temp pe-2">10°</span>{" "}
-          <span className="WeatherForecast-max-temp ps-2">18°</span>
-        </div>
-      </div>
-    </div>
-  );
+    axios.get(apiUrl).then(WeatherForecastResponse);
+    return null;
+  }
 }
