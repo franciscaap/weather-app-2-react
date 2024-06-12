@@ -14,7 +14,6 @@ export default function WeatherForecast(props) {
 
   if (loaded) {
     return (
-      /* eslint-disable */
       <div className="WeatherForecast ms-4 text-center">
         <div className="row">
           {forecast.map(function (dailyForecast, index) {
@@ -23,8 +22,9 @@ export default function WeatherForecast(props) {
                 <div className="col" key={index}>
                   <WeatherForecastDay data={dailyForecast} />
                 </div>
-                /* eslint-enable */
               );
+            } else {
+              return <></>;
             }
           })}
         </div>
