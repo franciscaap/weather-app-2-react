@@ -1,5 +1,6 @@
 import React from "react";
 import "./WeatherDetails.css";
+
 import SearchDate from "./SearchDate";
 import CurrentTemperature from "./CurrentTemperature";
 

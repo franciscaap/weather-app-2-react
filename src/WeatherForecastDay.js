@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WeatherForecastDay(props) {
   function day() {
-    let date = new Date(props.data.dt * 1000);
+    let date = new Date(props.data.time * 1000);
     let day = date.getDay();
 
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -10,17 +10,17 @@ export default function WeatherForecastDay(props) {
     return days[day];
   }
   function minimumTemp() {
-    let minimumTemp = Math.round(props.data.temp.min);
+    let minimumTemp = Math.round(props.data.temperature.minimum);
     return `${minimumTemp}°`;
   }
 
   function maximumTemp() {
-    let maximumTemp = Math.round(props.data.temp.max);
+    let maximumTemp = Math.round(props.data.temperature.maximum);
     return `${maximumTemp}°`;
   }
 
   function icon() {
-    let icon = `https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`;
+    let icon = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.data.condition.icon}.png`;
     return icon;
   }
 
